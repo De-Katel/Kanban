@@ -1,0 +1,7 @@
+.stage {
+    min-height: 100px;
+    background-color: #EBECF0;
+    border-radius: 5px;
+    width: 282px;
+    padding: 10px;
+}
