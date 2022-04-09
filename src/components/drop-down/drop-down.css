@@ -1,7 +1,10 @@
 .drop-down {
     background-color: white;
     border-radius: 5px;
-    margin: 5px 0px;
+    margin: 5px 10px 5px 0px ;
     padding: 7px;
-    width: 100%;
+   width: 100%;
+}
+.drop-down-wrap{
+    padding-right: 10px;
 }

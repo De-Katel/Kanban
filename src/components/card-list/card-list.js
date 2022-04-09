@@ -19,7 +19,6 @@ const CardList = ({ listThisStage }) => {
     <ul className='card-list'>
       {elements}
     </ul>
-
   )
 }
 

@@ -1,5 +1,14 @@
-footer {
+footer { 
+    font-size: 18px;
+    color:white;
+    height: 55px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #0067A3;
+    padding: 0 20PX;
+}
+
+.finished {
+    margin-left: 36px;
 }

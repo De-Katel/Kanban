@@ -1,4 +1,23 @@
 .add-button{
+    color: #5E6C84;
+    font-size: 18px;
+    border: none;
+    background-color: #EBECF0;
+    cursor: pointer;
+}
+
+.add-button:focus{
+    color: #0079BF;
+    outline: none; 
+}
+
+.add-button:hover{
+    color: #0079BF;
+    outline: none; 
+}
+
+.disabled{
+    font-size: 18px;
     border: none;
     background-color: #EBECF0;
 }

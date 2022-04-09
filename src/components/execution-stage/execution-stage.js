@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CardList from '../card-list/card-list';
 import DropDown from '../drop-down/drop-down';
 import AddButon from '../add-card/add-card';
@@ -6,36 +6,34 @@ import TaskAddForm from '../task-add-form/task-add-form'
 import './execution-stage.css'
 
 
-class ExecutionStage extends React.Component {
-  constructor(prop) {
-    super(prop);
-    this.state = { showButon: true };
+const ExecutionStage = ({ stage, beforeStage, cardLists, addItem, changeStage }) => {
 
-    this.onClickElem = () => {
-      this.setState(({ showButon }) => {
-        return {
-          showButon: !showButon
-        };
-      })
-    }
+  const [showButon, setShowButton] = useState(true);
+
+  const dropClick = (id) => {
+
+    changeStage(id);
+    setShowButton(!showButon);
   }
 
-  render() {
-    const { showButon } = this.state;
-    const addItem = this.props.addItem;
+  const listThisStage = cardLists.filter(item => item.stage === stage);
+  const dropDownList = cardLists.filter(item => item.stage === beforeStage);
 
-    return (
-      <div className='stage' >
-        <h2>{this.props.nameStage}</h2>
-        <CardList listThisStage={this.props.listThisStage} />
-        {showButon && addItem && <AddButon onClickElem={this.onClickElem} /> ||
-          !showButon && addItem && <TaskAddForm onClickElem={this.onClickElem} /> ||
-          showButon && !addItem && <AddButon onClickElem={this.onClickElem} /> ||
-          !showButon && !addItem && <DropDown onClickElem={this.onClickElem} dropDownList={this.props.dropDownList} />}
-      </div >
-    )
-  }
+  const buttonClick = () => setShowButton(!showButon);
 
+let disabled = !addItem&&!dropDownList.length?true:false;
+  
+  return (
+
+    <div className='stage' >
+      <h2>{stage}</h2>
+        <CardList listThisStage={listThisStage} />
+      {showButon && addItem && <AddButon onClickElem={buttonClick} disabled={false} /> ||
+        !showButon && addItem && <TaskAddForm onClickElem={buttonClick} addItem={addItem} /> ||
+        showButon && !addItem && <AddButon onClickElem={buttonClick} disabled={disabled} /> ||
+        !showButon && !addItem && <DropDown onClickElem={dropClick} dropDownList={dropDownList} />}
+    </div >
+  )
 }
 
 export default ExecutionStage;

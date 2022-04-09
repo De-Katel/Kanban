@@ -1,31 +1,37 @@
 import React from 'react';
 import ExecutionStage from '../execution-stage/execution-stage';
 import './app-main.css';
-
-const AppMain = ({ cardLists }) => {
-  const { backLogList, readyList, progressList, finishedList } = cardLists;
+ 
+const AppMain = ({ cardLists, changeStage, addItem }) => {
   return (
     <main>
       <ExecutionStage
-        listThisStage={backLogList}
-        dropDownList={[]}
-        nameStage='Backlog' 
-        addItem = {true}/>
+        stage='Backlog'
+        beforeStage={null}
+        cardLists={cardLists}
+        changeStage={null}
+        addItem={addItem} />
+
       <ExecutionStage
-        listThisStage={readyList}
-        dropDownList={backLogList}
-        nameStage='Ready' 
-        addItem = {false}/>
+        stage='Ready'
+        beforeStage='Backlog'
+        cardLists={cardLists}
+        changeStage={changeStage}
+        addItem={false} />
+
       <ExecutionStage
-        listThisStage={progressList}
-        dropDownList={readyList}
-        nameStage='In Progress' 
-        addItem = {false}/>
+        stage='In Progress'
+        beforeStage='Ready'
+        cardLists={cardLists}
+        changeStage={changeStage}
+        addItem={false} />
+ 
       <ExecutionStage
-        listThisStage={finishedList}
-        dropDownList={progressList}
-        nameStage='Finished' 
-        addItem = {false}/>
+        stage='Finished'
+        beforeStage='In Progress'
+        cardLists={cardLists}
+        changeStage={changeStage}
+        addItem={false} />
     </main>
   )
 }

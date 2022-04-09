@@ -1,4 +1,20 @@
 .card-list {
     list-style: none;
     padding: 0;
+    padding-right: 10px;
+    max-height: calc(100vh*0.45);
+    overflow-y: auto;
+
+}
+
+.card-list::-webkit-scrollbar {
+    background-color: white;
+    border-radius: 10px;
+    width: 12px;
+}
+
+.card-list::-webkit-scrollbar-thumb {
+    background-color: #CBCBCB;
+    border-radius: 10px
+    ;
 }

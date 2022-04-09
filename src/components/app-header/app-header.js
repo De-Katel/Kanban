@@ -5,7 +5,7 @@ const AppHeader = () => {
 
     return (
       <header>
-        <div>Name App</div>
+        <div>Awesome Kanban Board</div>
         <div>Log in</div>
       </header>
     )

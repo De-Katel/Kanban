@@ -1,0 +1,16 @@
+@font-face {
+    src: url('./fonts/Roboto-Regular.ttf');
+    font-family: RobotoRegular;
+}
+
+
+body{
+    font-family: RobotoRegular;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+height:100vh;
+
+}

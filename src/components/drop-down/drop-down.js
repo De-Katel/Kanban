@@ -5,25 +5,25 @@ const DropDown = ({ dropDownList, onClickElem }) => {
 
     const elements = dropDownList.map((item) => {
 
-        const { id, label } = item;
+        const { id, name } = item;
 
         return (
-            <option key={id} className='option'>
-                {label}
+
+            <option key={id} value={id} >
+                {name}
             </option>
         );
     });
 
-    if (dropDownList.length > 0) {
-
-        return (
-
-            <select onClick={onClickElem} className="drop-down">
+    return (
+        <div className="drop-down-wrap">
+            <select className="drop-down" onChange={(e) => onClickElem(e.target.value)}>
+                <option></option>
                 {elements}
             </select>
-        )
+        </div>
+    )
 
-    } else { return null }
 }
 
 export default DropDown;

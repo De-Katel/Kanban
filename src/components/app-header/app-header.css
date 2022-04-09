@@ -1,5 +1,10 @@
 header {
+    padding: 0 20PX;
+    font-size: 28px;
+    color: white;
+    height: 55px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #0067A3;
 }
