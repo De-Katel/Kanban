@@ -5,40 +5,21 @@ import AppFooter from '../app-footer/app-footer';
 import AppMain from '../app-main/app-main';
 
 const App = () => {
-
-  const [taskList, setTaskList] = useState(()=>JSON.parse(sessionStorage.getItem('taskList'))||[]);
-  const [nextId, setNextId] = useState(88);
+  // localStorage.clear();
+  const [taskList, setTaskList] = useState(() => JSON.parse(localStorage.getItem('taskList')) || []);
+  const [nextId, setNextId] = useState(() => JSON.parse(localStorage.getItem('nextId')) || 88);
+  const [showDescription, setShowDescription] = useState({});
 
   useEffect(() => {
-    
-    sessionStorage.setItem('taskList', JSON.stringify(taskList));
-    console.log(JSON.parse(sessionStorage.getItem('taskList'))||[]);
-    console.log(JSON.parse(sessionStorage.getItem('taskList')));
-  }, [taskList]);
 
-  const tasksSwitch = () => {
-
-    let activeTask = 0;
-    let finishedTask = 0;
-
-    taskList.forEach((item) => {
-
-      if (item.stage === 'Backlog') {
-        activeTask++
-      } else if (item.stage === 'Finished') {
-        finishedTask++
-      }
-    });
-
-    return {
-      active: activeTask,
-      finished: finishedTask
-    }
-  }
+    localStorage.setItem('taskList', JSON.stringify(taskList));
+    localStorage.setItem('nextId', JSON.stringify(nextId));
+  }, [taskList, nextId, showDescription]);
 
   const addItem = (text) => {
     let newItem = {
       name: text,
+      description: '',
       id: nextId,
       stage: 'Backlog',
       date: new Date()
@@ -67,7 +48,7 @@ const App = () => {
   }
 
   const changeStage = (id) => {
-
+console.log(id);
     setTaskList(
       taskList.map((item) => {
 
@@ -75,18 +56,69 @@ const App = () => {
 
           item.stage = setStage(item.stage);
           item.date = new Date();
+          console.log(item.id,id)
         }
         return item;
       })
     )
   }
 
-  const sortList = taskList !== [] ? taskList.slice().sort((a, b) => a.date.getTime() > b.date.getTime() ? 1 : -1) : [];
+  const selectDescription = (id) => {
+    setShowDescription(taskList.find((item) => item.id === id));
+  }
+
+  const changeDescription = (id, newDescription) => {
+
+    setTaskList(
+      
+      taskList.map((item) => {
+        
+        if (item.id === id) {
+
+          item.description = newDescription;
+        }
+        return item;
+      })
+    )
+  }
+
+  const sortList = taskList !== [] ?
+    taskList.slice().sort((a, b) =>
+      new Date(a.date).getTime() > new Date(b.date).getTime()
+        ? 1
+        : -1)
+    : [];
+
+  const tasksSwitch = () => {
+
+    let activeTask = 0;
+    let finishedTask = 0;
+
+    taskList.forEach((item) => {
+
+      if (item.stage === 'Backlog') {
+        activeTask++
+      } else if (item.stage === 'Finished') {
+        finishedTask++
+      }
+    });
+
+    return {
+      active: activeTask,
+      finished: finishedTask
+    }
+  }
 
   return (
     <>
       <AppHeader />
-      <AppMain cardLists={sortList} changeStage={changeStage} addItem={addItem} />
+      <AppMain
+        changeDescription={changeDescription}
+        showDescription={showDescription}
+        cardLists={sortList}
+        changeStage={changeStage}
+        addItem={addItem}
+        selectDescription={selectDescription} />
       <AppFooter tasksSwitch={tasksSwitch()} />
     </>
   )

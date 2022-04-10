@@ -6,7 +6,15 @@ import TaskAddForm from '../task-add-form/task-add-form'
 import './execution-stage.css'
 
 
-const ExecutionStage = ({ stage, beforeStage, cardLists, addItem, changeStage }) => {
+const ExecutionStage = ({
+  stage,
+  beforeStage,
+  cardLists,
+  addItem,
+  changeStage,
+  selectDescription,
+  setSwitchShow
+}) => {
 
   const [showButon, setShowButton] = useState(true);
 
@@ -21,13 +29,16 @@ const ExecutionStage = ({ stage, beforeStage, cardLists, addItem, changeStage })
 
   const buttonClick = () => setShowButton(!showButon);
 
-let disabled = !addItem&&!dropDownList.length?true:false;
-  
+  let disabled = !addItem && !dropDownList.length ? true : false;
+
   return (
 
     <div className='stage' >
       <h2>{stage}</h2>
-        <CardList listThisStage={listThisStage} />
+      <CardList
+        listThisStage={listThisStage}
+        selectDescription={selectDescription}
+        setSwitchShow = {setSwitchShow} />
       {showButon && addItem && <AddButon onClickElem={buttonClick} disabled={false} /> ||
         !showButon && addItem && <TaskAddForm onClickElem={buttonClick} addItem={addItem} /> ||
         showButon && !addItem && <AddButon onClickElem={buttonClick} disabled={disabled} /> ||

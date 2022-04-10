@@ -1,50 +1,44 @@
-import React from 'react';
+import React, { useState} from 'react';
 import './task-add-form.css';
 
-class TaskAddForm extends React.Component {
+const TaskAddForm = ({onClickElem,addItem}) => {
 
-    state = {
-        label: ''
-    }
+    const [label, setLabel] = useState('')
 
-
-    onSubmit = (e) => {
-        if (this.state.label) {
-            this.props.addItem(this.state.label)
+    const onSubmit = (e) => {
+        if (label) {
+            addItem(label)
             e.preventDefault();
-            this.props.onClickElem();
+            onClickElem();
         } else {
             e.preventDefault();
-            this.props.onClickElem();
+            onClickElem();
         }
     }
 
-    onLabelChange = (e) => {
+    const onLabelChange = (e) => {
 
-        this.setState({
-            label: e.target.value
-        })
+        setLabel(e.target.value)
     }
 
-    render() {
-        return (
-            <form
-                className='task-add-form'
-                onSubmit={this.onSubmit}
-
+    return (
+        <form
+            className='task-add-form'
+            onSubmit={onSubmit}
+        >
+            <input
+                className='input'
+                onChange={onLabelChange}
+                value={label}
             >
-                <input
-                    className='input'
-                    onChange={this.onLabelChange}
-                    value={this.state.label}
-                >
-                </input>
-                <button
-                    className='submit'>
-                    submit
-                </button>
-            </form>)
-    }
+            </input>
+            <button
+                className='submit'>
+                submit
+            </button>
+        </form>
+    )
+
 }
 
 export default TaskAddForm;

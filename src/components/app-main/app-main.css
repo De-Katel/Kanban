@@ -1,7 +1,6 @@
 main {
     box-sizing:border-box;
     height: calc(100% - 110px);
-min-height: calc(100vh-200px);
     padding: 20px;
     display: flex;
     justify-content: space-around;

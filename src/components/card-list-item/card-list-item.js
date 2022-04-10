@@ -1,10 +1,11 @@
 import React from "react";
 import './card-list-item.css'
 
-const CardListItem = ({ name }) => {
+const CardListItem = ({ name,id }) => {
 
   return (
-    <div className="list-item">
+    <div 
+    className="list-item">
       {name}
     </div>
   )
