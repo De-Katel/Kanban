@@ -1,7 +1,7 @@
 import React from "react";
 import './drop-down.css'
 
-const DropDown = ({ dropDownList, onClickElem, onBlur }) => {
+const DropDown = ({ dropDownList, clickElem, onBlur }) => {
 
     const elements = dropDownList.map((item) => {
 
@@ -20,7 +20,7 @@ const DropDown = ({ dropDownList, onClickElem, onBlur }) => {
             <select className="drop-down"
                 autoFocus={true}
                 onBlur={onBlur}
-                onChange={(e) => onClickElem(e.target.value)}>
+                onChange={(e) => clickElem(e.target.value)}>
                 <option></option>
                 {elements}
             </select>

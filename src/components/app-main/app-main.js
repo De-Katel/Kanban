@@ -1,13 +1,11 @@
-
-import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ExecutionStage from '../execution-stage/execution-stage';
 import DescriptionTask from '../description-task/description-task';
 import './app-main.css';
 
 const AppMain = ({
+
   changeDescription,
-  showDescription,
   cardList,
   changeStage,
   addItem,
@@ -27,7 +25,6 @@ const AppMain = ({
               changeStage={null}
               addItem={addItem}
               deleteItem={deleteItem}
-              setSwitchShow={() => setSwitchShow(!switchShow)}
             />
 
             <ExecutionStage
@@ -37,7 +34,7 @@ const AppMain = ({
               changeStage={changeStage}
               addItem={false}
               deleteItem={deleteItem}
-              setSwitchShow={() => setSwitchShow(!switchShow)} />
+            />
 
             <ExecutionStage
               stage='In Progress'
@@ -46,7 +43,7 @@ const AppMain = ({
               changeStage={changeStage}
               addItem={false}
               deleteItem={deleteItem}
-              setSwitchShow={() => setSwitchShow(!switchShow)} />
+            />
 
             <ExecutionStage
               stage='Finished'
@@ -55,7 +52,7 @@ const AppMain = ({
               changeStage={changeStage}
               addItem={false}
               deleteItem={deleteItem}
-              setSwitchShow={() => setSwitchShow(!switchShow)} />
+            />
           </main>
         }>
       </Route>

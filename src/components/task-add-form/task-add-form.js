@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import './task-add-form.css';
 
-const TaskAddForm = ({onClickElem,addItem}) => {
+const TaskAddForm = ({clickElem,addItem}) => {
 
     const [label, setLabel] = useState('')
 
@@ -9,10 +9,10 @@ const TaskAddForm = ({onClickElem,addItem}) => {
         if (label) {
             addItem(label)
             e.preventDefault();
-            onClickElem();
+            clickElem();
         } else {
             e.preventDefault();
-            onClickElem();
+            clickElem();
         }
     }
 
@@ -27,7 +27,7 @@ const TaskAddForm = ({onClickElem,addItem}) => {
             onSubmit={onSubmit}
         >
             <input
-            onBlur={!label?onClickElem:null}
+            onBlur={!label?clickElem:null}
             autoFocus = {true}
                 className='input'
                 onChange={onLabelChange}

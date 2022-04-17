@@ -2,12 +2,12 @@ import React from "react";
 import './add-card.css';
 
 
-const AddButon = ({ onClickElem, disabled }) => {
+const AddButon = ({ clickElem, disabled }) => {
 
     return (
         <button
             className={!disabled ? 'add-button' : 'disabled'}
-            onClick={onClickElem}
+            onClick={clickElem}
             disabled={disabled}>
             + Add card
         </button>

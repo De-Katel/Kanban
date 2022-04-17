@@ -1,8 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import AppHeader from '../app-header/app-header';
 import AppFooter from '../app-footer/app-footer';
@@ -133,7 +131,7 @@ const App = () => {
           changeStage={changeStage}
           addItem={addItem}
           deleteItem={deleteItem}
-          />
+        />
       </Router>
       <AppFooter tasksSwitch={tasksSwitch()} />
     </>
