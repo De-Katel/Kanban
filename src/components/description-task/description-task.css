@@ -10,6 +10,10 @@
     padding: 15px 22px;
     font-size: 24px;
 }
+.nameDeskription{
+    word-wrap: break-word;
+    width: 90%;
+}
 
 .descriptionWindow {
     position: relative;

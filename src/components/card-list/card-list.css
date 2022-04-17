@@ -18,22 +18,34 @@
     border-radius: 10px;
 }
 
-.link{
+.link {
+    width: 80%;
+    word-wrap: break-word;
     margin: 0;
     padding: 0;
     color: black;
     text-decoration: none;
 }
-.liWrap{
-    
-    word-wrap: break-word;
-    font-size: 18px;
+
+.liWrap {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
-background-color: white;
-border-radius: 5px;
-margin: 15px 0px 0px 0px;
-padding: 7px;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    margin: 15px 0px 0px 0px;
+    padding: 7px;
+}
+
+.deleteTask {
+    color: #5E6C84;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+}
+
+.deleteTask:hover {
+    color: #0079BF;
 }

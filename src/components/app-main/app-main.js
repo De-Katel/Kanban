@@ -8,10 +8,9 @@ import './app-main.css';
 const AppMain = ({
   changeDescription,
   showDescription,
-  cardLists,
+  cardList,
   changeStage,
   addItem,
-  selectDescription,
   deleteItem
 }) => {
 
@@ -24,57 +23,58 @@ const AppMain = ({
             <ExecutionStage
               stage='Backlog'
               beforeStage={null}
-              cardLists={cardLists}
+              cardList={cardList}
               changeStage={null}
               addItem={addItem}
               deleteItem={deleteItem}
-              selectDescription={selectDescription}
               setSwitchShow={() => setSwitchShow(!switchShow)}
             />
 
             <ExecutionStage
               stage='Ready'
               beforeStage='Backlog'
-              cardLists={cardLists}
+              cardList={cardList}
               changeStage={changeStage}
               addItem={false}
               deleteItem={deleteItem}
-              selectDescription={selectDescription}
               setSwitchShow={() => setSwitchShow(!switchShow)} />
 
             <ExecutionStage
               stage='In Progress'
               beforeStage='Ready'
-              cardLists={cardLists}
+              cardList={cardList}
               changeStage={changeStage}
               addItem={false}
               deleteItem={deleteItem}
-              selectDescription={selectDescription}
               setSwitchShow={() => setSwitchShow(!switchShow)} />
 
             <ExecutionStage
               stage='Finished'
               beforeStage='In Progress'
-              cardLists={cardLists}
+              cardList={cardList}
               changeStage={changeStage}
               addItem={false}
               deleteItem={deleteItem}
-              selectDescription={selectDescription}
               setSwitchShow={() => setSwitchShow(!switchShow)} />
           </main>
-        }> 
-        </Route>
+        }>
+      </Route>
 
-        <Route path='*'
-         element=
-         {<main>
-         <DescriptionTask 
+      <Route path='/card'
+        element=
+        {<main>
+          <DescriptionTask
+            changeDescription={changeDescription}
+            cardList={cardList}
+          />
+        </main>
+        }>
+        <Route path=":cardId" element={<DescriptionTask
           changeDescription={changeDescription}
-         item = {showDescription}
-         />
-         </main>
-         }>
-         </Route>
+          cardList={cardList}
+        />} >
+        </Route>
+      </Route>
     </Routes>
 
   )

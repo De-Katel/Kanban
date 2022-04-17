@@ -9,10 +9,9 @@ import './execution-stage.css'
 const ExecutionStage = ({
   stage,
   beforeStage,
-  cardLists,
+  cardList,
   addItem,
   changeStage,
-  selectDescription,
   deleteItem
 }) => {
 
@@ -24,8 +23,8 @@ const ExecutionStage = ({
     setShowButton(!showButon);
   }
 
-  const listThisStage = cardLists.filter(item => item.stage === stage);
-  const dropDownList = cardLists.filter(item => item.stage === beforeStage);
+  const listThisStage = cardList.filter(item => item.stage === stage);
+  const dropDownList = cardList.filter(item => item.stage === beforeStage);
 
   const buttonClick = () => setShowButton(!showButon);
 
@@ -37,7 +36,6 @@ const ExecutionStage = ({
       <h2>{stage}</h2>
       <CardList
         listThisStage={listThisStage}
-        selectDescription={selectDescription}
         deleteItem = {deleteItem} />
       {showButon && addItem && <AddButon onClickElem={buttonClick} disabled={false} /> ||
         !showButon && addItem && <TaskAddForm onClickElem={buttonClick} addItem={addItem} /> ||

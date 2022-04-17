@@ -9,16 +9,14 @@ import AppFooter from '../app-footer/app-footer';
 import AppMain from '../app-main/app-main';
 
 const App = () => {
-  // localStorage.clear();
+
   const [taskList, setTaskList] = useState(() => JSON.parse(localStorage.getItem('taskList')) || []);
   const [nextId, setNextId] = useState(() => JSON.parse(localStorage.getItem('nextId')) || 88);
-  const [showDescription, setShowDescription] = useState({});
 
   useEffect(() => {
-
     localStorage.setItem('taskList', JSON.stringify(taskList));
     localStorage.setItem('nextId', JSON.stringify(nextId));
-  }, [taskList, nextId, showDescription]);
+  }, [taskList, nextId]);
 
   const addItem = (text) => {
 
@@ -81,11 +79,6 @@ const App = () => {
     )
   }
 
-  const selectDescription = (id) => {
-
-    setShowDescription(taskList.find((item) => item.id === id));
-  }
-
   const changeDescription = (id, newDescription) => {
 
     setTaskList(
@@ -136,12 +129,11 @@ const App = () => {
       <Router>
         <AppMain
           changeDescription={changeDescription}
-          showDescription={showDescription}
-          cardLists={sortList}
+          cardList={sortList}
           changeStage={changeStage}
           addItem={addItem}
           deleteItem={deleteItem}
-          selectDescription={selectDescription} />
+          />
       </Router>
       <AppFooter tasksSwitch={tasksSwitch()} />
     </>

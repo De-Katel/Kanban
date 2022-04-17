@@ -9,7 +9,7 @@ import {
 import CardListItem from '../card-list-item/card-list-item';
 import './card-list.css';
 
-const CardList = ({ listThisStage, selectDescription, deleteItem }) => {
+const CardList = ({ listThisStage, deleteItem }) => {
 
   const elements = listThisStage.map((item) => {
 
@@ -17,16 +17,11 @@ const CardList = ({ listThisStage, selectDescription, deleteItem }) => {
 
     return (
 
-      <li
-        key={id}
-      >
-        <div
-          className='liWrap'
-        >
+      <li key={id}>
+        <div className='liWrap'>
           {<Link
             to={`/card/${id}`}
             className='link'
-            onClick={() => selectDescription(id)}
           >
             <CardListItem {...itemProps} />
           </Link>}

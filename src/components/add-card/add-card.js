@@ -4,7 +4,6 @@ import './add-card.css';
 
 const AddButon = ({ onClickElem, disabled }) => {
 
-    
     return (
         <button
             className={!disabled ? 'add-button' : 'disabled'}

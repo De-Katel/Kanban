@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
-    Routes
-} from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import './description-task.css';
 
-const DescriptionTask = ({ changeDescription, item }) => {
+const DescriptionTask = ({ changeDescription, cardList }) => {
+
+    const params = useParams();
+
+    const item = cardList.find((item) => item.id == params.cardId);
 
     const [newDescription, setNewDescription] = useState(item.description);
 
@@ -17,43 +16,35 @@ const DescriptionTask = ({ changeDescription, item }) => {
     }
 
     const saveChanges = () => {
+
         changeDescription(item.id, newDescription);
-        setNewDescription(item.description);
     }
 
     return (
-        <>
-            <Routes>
-                <Route path={`/card/${item.id}`}
-                    element={
-                        <div className='descriptionWindow' >
 
-                            <div className='headDeskription'>
-                                <div>
-                                    {item.name}
-                                </div>
-                                <Link to='/'>
-                                    <button
-                                        title='save and close'
-                                        className='close'
-                                        onClick={saveChanges}>
-                                        &#215;
-                                    </button>
-                                </Link>
-                            </div>
-                            <textarea
-                                placeholder='This task has no description'
-                                className='description'
-                                onChange={onLabelChange}
-                                value={newDescription}
-                            >
-                            </textarea>
-                        </div>
-                    }>
-                </Route>
-            </Routes>
+        <div className='descriptionWindow' >
+            <div className='headDeskription'>
+                <div className='nameDeskription'>
+                    {item.name}
+                </div>
+                <Link to='/'>
+                    <button
+                        title='save and close'
+                        className='close'
+                        onClick={saveChanges}>
+                        &#215;
+                    </button>
+                </Link>
+            </div>
+            <textarea
+                placeholder='This task has no description'
+                className='description'
+                onChange={onLabelChange}
+                value={newDescription}
+            >
+            </textarea>
+        </div>
 
-        </>
     )
 }
 export default DescriptionTask;

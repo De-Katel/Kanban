@@ -4,14 +4,11 @@ import './card-list-item.css'
 const CardListItem = ({ name }) => {
 
   return (
+
     <div
-      className="list-item">
-      <span
-        className="item-name"
-        title="see description">
-        {name}
-      </span>
-      
+      className="item-name"
+      title="see description">
+      {name}
     </div>
   )
 }
