@@ -27,6 +27,8 @@ const TaskAddForm = ({onClickElem,addItem}) => {
             onSubmit={onSubmit}
         >
             <input
+            onBlur={!label?onClickElem:null}
+            autoFocus = {true}
                 className='input'
                 onChange={onLabelChange}
                 value={label}

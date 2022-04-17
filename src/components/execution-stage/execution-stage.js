@@ -13,7 +13,7 @@ const ExecutionStage = ({
   addItem,
   changeStage,
   selectDescription,
-  setSwitchShow
+  deleteItem
 }) => {
 
   const [showButon, setShowButton] = useState(true);
@@ -38,11 +38,11 @@ const ExecutionStage = ({
       <CardList
         listThisStage={listThisStage}
         selectDescription={selectDescription}
-        setSwitchShow = {setSwitchShow} />
+        deleteItem = {deleteItem} />
       {showButon && addItem && <AddButon onClickElem={buttonClick} disabled={false} /> ||
         !showButon && addItem && <TaskAddForm onClickElem={buttonClick} addItem={addItem} /> ||
         showButon && !addItem && <AddButon onClickElem={buttonClick} disabled={disabled} /> ||
-        !showButon && !addItem && <DropDown onClickElem={dropClick} dropDownList={dropDownList} />}
+        !showButon && !addItem && <DropDown onClickElem={dropClick} onBlur={buttonClick}  dropDownList={dropDownList} />}
     </div >
   )
 }

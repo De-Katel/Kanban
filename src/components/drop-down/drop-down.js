@@ -1,7 +1,7 @@
 import React from "react";
 import './drop-down.css'
 
-const DropDown = ({ dropDownList, onClickElem }) => {
+const DropDown = ({ dropDownList, onClickElem, onBlur }) => {
 
     const elements = dropDownList.map((item) => {
 
@@ -17,7 +17,10 @@ const DropDown = ({ dropDownList, onClickElem }) => {
 
     return (
         <div className="drop-down-wrap">
-            <select className="drop-down" onChange={(e) => onClickElem(e.target.value)}>
+            <select className="drop-down"
+                autoFocus={true}
+                onBlur={onBlur}
+                onChange={(e) => onClickElem(e.target.value)}>
                 <option></option>
                 {elements}
             </select>

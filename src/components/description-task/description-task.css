@@ -19,6 +19,7 @@
 }
 
 .close {
+    cursor: pointer;
     font-size: 40px;
     padding: 0;
     margin: 0;
@@ -39,4 +40,15 @@
     height: calc(100vh*0.6);
     width: 90vw;
     resize: none;
+}
+
+.description::-webkit-scrollbar {
+    background-color: white;
+    border-radius: 5px;
+    width: 12px;
+}
+
+.description::-webkit-scrollbar-thumb {
+    background-color: #CBCBCB;
+    border-radius: 5px;
 }

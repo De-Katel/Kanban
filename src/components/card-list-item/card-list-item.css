@@ -1,9 +1,28 @@
 .list-item {
-    background-color: white;
-    border-radius: 5px;
-    margin: 15px 0px 0px 0px;
-    padding: 7px;
+   
     word-wrap: break-word;
     font-size: 18px;
+   
+    
+}
+.item-name{
+    width: 90%;
+    display: block;
     cursor: pointer;
 }
+
+.item-name:hover{
+    color: #5E6C84;
+}
+
+/* .deleteTask{
+    color: #5E6C84;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+}
+
+.deleteTask:hover{
+    color: #0079BF;
+} */

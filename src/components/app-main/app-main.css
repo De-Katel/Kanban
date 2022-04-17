@@ -8,3 +8,13 @@ main {
     background-color: #0079BF;
     overflow-y: auto;
 }
+main::-webkit-scrollbar {
+    background-color: #699dbb;
+  
+    width: 12px;
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: #CBCBCB;
+   
+}

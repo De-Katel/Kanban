@@ -15,6 +15,25 @@
 
 .card-list::-webkit-scrollbar-thumb {
     background-color: #CBCBCB;
-    border-radius: 10px
-    ;
+    border-radius: 10px;
+}
+
+.link{
+    margin: 0;
+    padding: 0;
+    color: black;
+    text-decoration: none;
+}
+.liWrap{
+    
+    word-wrap: break-word;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+background-color: white;
+border-radius: 5px;
+margin: 15px 0px 0px 0px;
+padding: 7px;
 }

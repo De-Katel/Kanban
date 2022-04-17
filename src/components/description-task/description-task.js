@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
+import {
+    BrowserRouter as Router,
+    Route,
+    Link,
+    Routes
+} from 'react-router-dom';
 import './description-task.css';
 
-const DescriptionTask = ({ changeDescription, item, setSwitchShow }) => {
+const DescriptionTask = ({ changeDescription, item }) => {
 
     const [newDescription, setNewDescription] = useState(item.description);
 
@@ -13,25 +19,28 @@ const DescriptionTask = ({ changeDescription, item, setSwitchShow }) => {
     const saveChanges = () => {
         changeDescription(item.id, newDescription);
         setNewDescription(item.description);
-        setSwitchShow();
     }
 
-
-
     return (
+
         <div className='descriptionWindow' >
 
             <div className='headDeskription'>
                 <div>
                     {item.name}
                 </div>
-                <button
-                className='close'
-                    onClick={saveChanges}>
-                &#215;
-                </button>
+                <Link to='/'>
+                    <button
+                        title='save and close'
+                        className='close'
+                        onClick={saveChanges}>
+                        &#215;
+                    </button>
+                </Link>
             </div>
+
             <textarea
+                placeholder='This task has no description'
                 className='description'
                 onChange={onLabelChange}
                 value={newDescription}

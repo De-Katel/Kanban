@@ -1,5 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+} from 'react-router-dom';
+
 import AppHeader from '../app-header/app-header';
 import AppFooter from '../app-footer/app-footer';
 import AppMain from '../app-main/app-main';
@@ -17,6 +21,7 @@ const App = () => {
   }, [taskList, nextId, showDescription]);
 
   const addItem = (text) => {
+
     let newItem = {
       name: text,
       description: '',
@@ -27,6 +32,20 @@ const App = () => {
 
     setNextId(nextId + 1);
     setTaskList([...taskList, newItem]);
+  }
+
+  const deleteItem = (id) => {
+
+    setTaskList((taskList) => {
+
+      const idx = taskList.findIndex((el) => (el.id === id));
+
+      const before = taskList.slice(0, idx);
+      const after = taskList.slice(idx + 1);
+      const newArray = [...before, ...after];
+
+      return newArray;
+    })
   }
 
   const setStage = (stage) => {
@@ -48,7 +67,7 @@ const App = () => {
   }
 
   const changeStage = (id) => {
-console.log(id);
+
     setTaskList(
       taskList.map((item) => {
 
@@ -56,7 +75,6 @@ console.log(id);
 
           item.stage = setStage(item.stage);
           item.date = new Date();
-          console.log(item.id,id)
         }
         return item;
       })
@@ -64,15 +82,16 @@ console.log(id);
   }
 
   const selectDescription = (id) => {
+
     setShowDescription(taskList.find((item) => item.id === id));
   }
 
   const changeDescription = (id, newDescription) => {
 
     setTaskList(
-      
+
       taskList.map((item) => {
-        
+
         if (item.id === id) {
 
           item.description = newDescription;
@@ -83,7 +102,9 @@ console.log(id);
   }
 
   const sortList = taskList !== [] ?
+
     taskList.slice().sort((a, b) =>
+
       new Date(a.date).getTime() > new Date(b.date).getTime()
         ? 1
         : -1)
@@ -112,13 +133,16 @@ console.log(id);
   return (
     <>
       <AppHeader />
-      <AppMain
-        changeDescription={changeDescription}
-        showDescription={showDescription}
-        cardLists={sortList}
-        changeStage={changeStage}
-        addItem={addItem}
-        selectDescription={selectDescription} />
+      <Router>
+        <AppMain
+          changeDescription={changeDescription}
+          showDescription={showDescription}
+          cardLists={sortList}
+          changeStage={changeStage}
+          addItem={addItem}
+          deleteItem={deleteItem}
+          selectDescription={selectDescription} />
+      </Router>
       <AppFooter tasksSwitch={tasksSwitch()} />
     </>
   )
