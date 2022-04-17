@@ -22,31 +22,38 @@ const DescriptionTask = ({ changeDescription, item }) => {
     }
 
     return (
+        <>
+            <Routes>
+                <Route path={`/card/${item.id}`}
+                    element={
+                        <div className='descriptionWindow' >
 
-        <div className='descriptionWindow' >
+                            <div className='headDeskription'>
+                                <div>
+                                    {item.name}
+                                </div>
+                                <Link to='/'>
+                                    <button
+                                        title='save and close'
+                                        className='close'
+                                        onClick={saveChanges}>
+                                        &#215;
+                                    </button>
+                                </Link>
+                            </div>
+                            <textarea
+                                placeholder='This task has no description'
+                                className='description'
+                                onChange={onLabelChange}
+                                value={newDescription}
+                            >
+                            </textarea>
+                        </div>
+                    }>
+                </Route>
+            </Routes>
 
-            <div className='headDeskription'>
-                <div>
-                    {item.name}
-                </div>
-                <Link to='/'>
-                    <button
-                        title='save and close'
-                        className='close'
-                        onClick={saveChanges}>
-                        &#215;
-                    </button>
-                </Link>
-            </div>
-
-            <textarea
-                placeholder='This task has no description'
-                className='description'
-                onChange={onLabelChange}
-                value={newDescription}
-            >
-            </textarea>
-        </div>
+        </>
     )
 }
 export default DescriptionTask;

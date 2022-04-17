@@ -24,7 +24,7 @@ const CardList = ({ listThisStage, selectDescription, deleteItem }) => {
           className='liWrap'
         >
           {<Link
-            to={`/card`}
+            to={`/card/${id}`}
             className='link'
             onClick={() => selectDescription(id)}
           >

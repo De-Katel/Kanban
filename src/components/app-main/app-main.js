@@ -65,7 +65,7 @@ const AppMain = ({
         }> 
         </Route>
 
-        <Route path='/card'
+        <Route path='*'
          element=
          {<main>
          <DescriptionTask 
@@ -73,7 +73,8 @@ const AppMain = ({
          item = {showDescription}
          />
          </main>
-         }></Route>
+         }>
+         </Route>
     </Routes>
 
   )
