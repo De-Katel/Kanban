@@ -1,20 +1,39 @@
+@media screen and (max-width: 338px) {
+    main {
+        display: block;
+        padding: 0 20px;
+        overflow-y: hidden;
+        border-top:  #0079BF;
+        margin-top: -1px;
+        height: calc(100% - 130px);
+        padding-bottom: 20px;
+    }
+
+}
+
+@media screen and (min-width: 339px) {
+    main {
+        display: flex;
+        padding: 20px;
+        height: calc(100% - 110px);
+    }
+    main::-webkit-scrollbar {
+        background-color: #699dbb;
+    
+        width: 12px;
+    }
+    
+    main::-webkit-scrollbar-thumb {
+        background-color: #CBCBCB;
+    
+    }
+}
+
 main {
-    box-sizing:border-box;
-    height: calc(100% - 110px);
-    padding: 20px;
-    display: flex;
+    box-sizing: border-box;
     justify-content: space-around;
     align-items: flex-start;
     background-color: #0079BF;
     overflow-y: auto;
 }
-main::-webkit-scrollbar {
-    background-color: #699dbb;
-  
-    width: 12px;
-}
 
-main::-webkit-scrollbar-thumb {
-    background-color: #CBCBCB;
-   
-}

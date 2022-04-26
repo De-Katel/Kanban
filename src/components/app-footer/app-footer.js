@@ -4,8 +4,8 @@ import './app-footer.css';
 const AppFooter = ({tasksSwitch}) => {
 
     return (
-      <footer>
-        <div>
+      <footer> 
+        <div className='tasks-switch'>
           <span>Active tasks:  {tasksSwitch.active}</span>
           <span className='finished'>Finished tasks:  {tasksSwitch.finished}</span>
         </div>

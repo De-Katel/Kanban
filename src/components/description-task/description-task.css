@@ -10,7 +10,8 @@
     padding: 15px 22px;
     font-size: 24px;
 }
-.nameDescription{
+
+.nameDescription {
     word-wrap: break-word;
     width: 90%;
 }
@@ -55,4 +56,15 @@
 .description::-webkit-scrollbar-thumb {
     background-color: #CBCBCB;
     border-radius: 5px;
+}
+@media screen and (max-width: 338px){
+    .descriptionWindow{
+        margin-top: 20px;
+        width: 100%;
+        height: 70vh;
+    }
+    .description {
+        width: 100%;
+        height:50vh;
+    }
 }

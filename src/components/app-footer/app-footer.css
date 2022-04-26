@@ -12,3 +12,24 @@ footer {
 .finished {
     margin-left: 36px;
 }
+
+@media screen and (max-width: 338px){
+    footer {
+        box-sizing:border-box;
+        height: 75px;
+        display: flex;
+        flex-direction: column;
+        padding: 9px 0px;
+        text-align: center;
+    } 
+
+    .tasks-switch{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .finished {
+        margin-left: 20px;
+    }
+}

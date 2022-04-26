@@ -28,7 +28,7 @@ const DescriptionTask = ({ changeDescription, cardList }) => {
                     {item.name}
                 </div>
                 <Link to='/'>
-                    <button
+                    <button 
                         title='save and close'
                         className='close'
                         onClick={saveChanges}>
