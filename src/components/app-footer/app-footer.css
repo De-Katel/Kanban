@@ -13,7 +13,7 @@ footer {
     margin-left: 36px;
 }
 
-@media screen and (max-width: 338px){
+@media screen and (max-width: 768px){
     footer {
         box-sizing:border-box;
         height: 75px;

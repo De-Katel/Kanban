@@ -3,19 +3,14 @@
     font-family: RobotoRegular;
 }
 
-@media screen and (min-width: 339px) {
-    body {
-        min-width: 700px;
-    }
-}
-
-@media screen and (max-width: 339px){
+/* @media screen and (max-width: 768px){
     body {
         min-width: 300px; 
     }
-}
+} */
 
 body {
+    min-width: 300px;
     font-family: RobotoRegular;
     margin: 0;
     padding: 0;

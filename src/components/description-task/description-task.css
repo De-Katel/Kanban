@@ -57,7 +57,7 @@
     background-color: #CBCBCB;
     border-radius: 5px;
 }
-@media screen and (max-width: 338px){
+@media screen and (max-width: 768px){
     .descriptionWindow{
         margin-top: 20px;
         width: 100%;

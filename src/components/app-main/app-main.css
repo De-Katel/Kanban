@@ -1,9 +1,9 @@
-@media screen and (max-width: 338px) {
+@media screen and (max-width: 768px) {
     main {
         display: block;
         padding: 0 20px;
         overflow-y: hidden;
-        border-top:  #0079BF;
+        border-top: #0079BF;
         margin-top: -1px;
         height: calc(100% - 130px);
         padding-bottom: 20px;
@@ -11,22 +11,25 @@
 
 }
 
-@media screen and (min-width: 339px) {
+@media screen and (min-width: 769px) {
     main {
         display: flex;
         padding: 20px;
         height: calc(100% - 110px);
     }
-    main::-webkit-scrollbar {
-        background-color: #699dbb;
-    
-        width: 12px;
-    }
-    
-    main::-webkit-scrollbar-thumb {
-        background-color: #CBCBCB;
-    
-    }
+
+}
+
+main::-webkit-scrollbar {
+    background-color: #699dbb;
+
+    width: 12px;
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: #CBCBCB;
+    border-radius: 5px;
+
 }
 
 main {
@@ -36,4 +39,3 @@ main {
     background-color: #0079BF;
     overflow-y: auto;
 }
-

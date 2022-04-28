@@ -11,7 +11,7 @@
 h2 {
     margin: 0;
 }
-@media screen and (max-width: 338px){
+@media screen and (max-width: 768px){
     .stage{
         margin-top: 30px;
         width:100%;
