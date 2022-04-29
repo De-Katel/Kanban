@@ -1,6 +1,6 @@
-footer { 
+footer {
     font-size: 18px;
-    color:white;
+    color: white;
     height: 55px;
     display: flex;
     justify-content: space-between;
@@ -13,17 +13,17 @@ footer {
     margin-left: 36px;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     footer {
-        box-sizing:border-box;
+        box-sizing: border-box;
         height: 75px;
         display: flex;
         flex-direction: column;
         padding: 9px 0px;
         text-align: center;
-    } 
+    }
 
-    .tasks-switch{
+    .tasks-switch {
         display: flex;
         flex-direction: row;
         justify-content: space-around;

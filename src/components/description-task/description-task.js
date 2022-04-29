@@ -21,14 +21,14 @@ const DescriptionTask = ({ changeDescription, cardList }) => {
     }
 
     return (
- 
+
         <div className='descriptionWindow' >
             <div className='headDeskription'>
                 <div className='nameDescription'>
                     {item.name}
                 </div>
                 <Link to='/'>
-                    <button 
+                    <button
                         title='save and close'
                         className='close'
                         onClick={saveChanges}>
@@ -44,7 +44,6 @@ const DescriptionTask = ({ changeDescription, cardList }) => {
             >
             </textarea>
         </div>
-
     )
 }
 export default DescriptionTask;

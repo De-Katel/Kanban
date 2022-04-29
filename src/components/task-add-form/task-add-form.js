@@ -32,8 +32,8 @@ const TaskAddForm = ({clickElem,addItem}) => {
                 className='input'
                 onChange={onLabelChange}
                 value={label}
-            >
-            </input>
+            ></input>
+            
             <button
                 className='submit'>
                 submit

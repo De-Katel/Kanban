@@ -72,6 +72,14 @@ const AppMain = ({
         />} >
         </Route>
       </Route>
+      
+      <Route path='*'
+        element={
+          <main>
+            NO
+          </main>
+        }>
+      </Route>
     </Routes>
 
   )

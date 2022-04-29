@@ -33,6 +33,10 @@
     border-radius: 5px;
 }
 
+.close:hover {
+    color: #0079BF;
+}
+
 .description {
     font-family: RobotoRegular;
     box-sizing: border-box;
@@ -57,14 +61,17 @@
     background-color: #CBCBCB;
     border-radius: 5px;
 }
-@media screen and (max-width: 768px){
-    .descriptionWindow{
+
+@media screen and (max-width: 768px) {
+
+    .descriptionWindow {
         margin-top: 20px;
         width: 100%;
         height: 70vh;
     }
+
     .description {
         width: 100%;
-        height:50vh;
+        height: 50vh;
     }
 }

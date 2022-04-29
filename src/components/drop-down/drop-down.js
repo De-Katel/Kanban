@@ -16,6 +16,7 @@ const DropDown = ({ dropDownList, clickElem, onBlur }) => {
     });
 
     return (
+        
         <div className="drop-down-wrap">
             <select className="drop-down"
                 autoFocus={true}

@@ -1,4 +1,4 @@
-.add-button{
+.add-button {
     color: #5E6C84;
     font-size: 18px;
     border: none;
@@ -6,17 +6,17 @@
     cursor: pointer;
 }
 
-.add-button:focus{
+.add-button:focus {
     color: #0079BF;
-    outline: none; 
+    outline: none;
 }
 
-.add-button:hover{
+.add-button:hover {
     color: #0079BF;
-    outline: none; 
+    outline: none;
 }
 
-.disabled{
+.disabled {
     font-size: 18px;
     border: none;
     background-color: #EBECF0;

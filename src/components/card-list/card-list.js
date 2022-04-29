@@ -27,7 +27,6 @@ const CardList = ({ listThisStage, deleteItem }) => {
           </button>
         </div>
       </li>
-
     );
   });
 

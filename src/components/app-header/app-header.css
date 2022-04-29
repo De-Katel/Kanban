@@ -10,34 +10,32 @@ header {
     background-color: #0067A3;
 }
 
-.profile{
+.profile {
     margin-top: 5px;
     width: 120px;
     height: 60px;
-    position: absolute;
     background-color: white;
     padding: 5px;
     border-radius: 5px;
 }
 
-
 .profile::after {
-    content: ''; 
-    position: absolute; 
-    left: 87px; bottom: 70px;
+    content: '';
+    position: absolute;
+    left: 87px;
+    bottom: 70px;
     border: 8px solid transparent;
     border-bottom: 8px solid white;
-   }
+}
 
-
-.profile-item{
+.profile-item {
     cursor: pointer;
     margin-left: 5px;
     margin-top: 7px;
     margin-bottom: 10px;
 }
 
-.profile-item:hover{
+.profile-item:hover {
     color: #0079BF;
 }
 
