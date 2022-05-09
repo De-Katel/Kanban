@@ -92,7 +92,7 @@ const App = () => {
     )
   }
 
-  const sortList = taskList !== [] ?
+  const sortList = taskList.length!==0 ?
 
     taskList.slice().sort((a, b) =>
 

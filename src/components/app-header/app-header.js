@@ -9,19 +9,21 @@ const AppHeader = () => {
 
   const [showProfile, setShowProfile] = useState(false);
 
+  const handleClick = () => setShowProfile(!showProfile);
+
   const profile = (
     <Popover
       className='profile'>
       <Popover.Body>
         <div
           className='profile-item'
-          onClick={() => setShowProfile(!showProfile)}
+          onClick={handleClick}
         >Profile</div>
       </Popover.Body>
       <Popover.Body>
         <div
           className='profile-item'
-          onClick={() => setShowProfile(!showProfile)}
+          onClick={handleClick}
         >Log Out</div>
       </Popover.Body>
     </Popover>
@@ -37,7 +39,7 @@ const AppHeader = () => {
         overlay={profile} >
         <div
           className='log-in'
-          onClick={() => setShowProfile(!showProfile)}>
+          onClick={handleClick}>
           <div className='avatar-wrap'>
             <img className='avatar' src={avatar} alt='avatar' />
           </div>
